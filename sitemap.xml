@@ -1,2 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://staging.kora-086addf9-ff5e-49d1-ac18-31d5d8ed4849.pages.dev</loc><lastmod>2026-03-31</lastmod><priority>1.0</priority></url></urlset>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://deliciasperuviankitchen.com/</loc>
+    <priority>1.0</priority>
+  </url>
+</urlset>
