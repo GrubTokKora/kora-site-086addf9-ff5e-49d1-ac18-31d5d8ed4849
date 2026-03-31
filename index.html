@@ -1753,7 +1753,7 @@
 
         .site-footer-shell {
             position: relative;
-            padding-top: 22px;
+            padding-top: 26px;
         }
 
         .site-footer-shell::before {
@@ -1769,40 +1769,15 @@
 
         .site-footer-top {
             display: grid;
-            grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr) minmax(0, 0.8fr) minmax(0, 0.9fr);
-            gap: 34px;
+            grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.95fr);
+            gap: 56px;
             align-items: start;
-            padding-bottom: 34px;
+            padding-bottom: 42px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.12);
         }
 
         .footer-brand {
-            padding-right: 28px;
-        }
-
-        .footer-badge-row {
-            display: inline-flex;
-            align-items: center;
-            gap: 14px;
-            margin-bottom: 18px;
-            text-decoration: none;
-        }
-
-        .footer-badge-row img {
-            display: block;
-        }
-
-        .footer-brand-badge {
-            width: 60px;
-            height: 60px;
-            object-fit: contain;
-        }
-
-        .footer-brand-wordmark {
-            width: 288px;
-            max-width: 100%;
-            height: auto;
-            object-fit: contain;
+            padding-right: 40px;
         }
 
         .footer-kicker {
@@ -1826,49 +1801,23 @@
         }
 
         .footer-brand p {
-            max-width: 460px;
-            font-size: 18px;
-            line-height: 1.72;
-            color: rgba(255, 248, 240, 0.88);
-            margin-bottom: 26px;
+            max-width: 520px;
+            font-size: 20px;
+            line-height: 1.7;
+            color: rgba(255, 248, 240, 0.9);
+            margin-bottom: 0;
         }
 
-        .footer-social {
-            display: flex;
-            gap: 12px;
-        }
-
-        .social-btn {
-            width: 46px;
-            height: 46px;
-            border-radius: 999px;
-            background: rgba(255, 255, 255, 0.06);
-            border: 1px solid rgba(255, 255, 255, 0.16);
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            color: #fff;
-            text-decoration: none;
-            transition: transform 0.2s, background 0.2s, border-color 0.2s;
-        }
-
-        .social-btn:hover {
-            transform: translateY(-2px);
-            background: rgba(255, 195, 0, 0.14);
-            border-color: rgba(255, 211, 92, 0.4);
-        }
-
-        .social-btn svg {
-            width: 18px;
-            height: 18px;
-            fill: currentColor;
-            display: block;
+        .footer-details {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 28px 34px;
+            padding-top: 4px;
         }
 
         .footer-card {
             min-height: 100%;
-            padding-left: 22px;
-            border-left: 1px solid rgba(255, 255, 255, 0.12);
+            padding-top: 2px;
         }
 
         .footer-card h4 {
@@ -1884,9 +1833,9 @@
         .footer-card a,
         .footer-card li,
         .footer-hours-grid span {
-            font-size: 16px;
-            line-height: 1.75;
-            color: rgba(255, 248, 240, 0.9);
+            font-size: 15px;
+            line-height: 1.8;
+            color: rgba(255, 248, 240, 0.86);
             text-decoration: none;
         }
 
@@ -1897,7 +1846,7 @@
         .footer-card ul {
             list-style: none;
             display: grid;
-            gap: 8px;
+            gap: 6px;
         }
 
         .footer-hours-grid {
@@ -1913,23 +1862,23 @@
 
         .footer-cta {
             margin-top: 0;
-            padding-top: 28px;
-            display: flex;
+            padding-top: 30px;
+            display: grid;
+            grid-template-columns: minmax(0, 1.1fr) auto;
             align-items: center;
-            justify-content: space-between;
-            gap: 24px;
+            gap: 28px;
         }
 
         .footer-cta-copy h3 {
             font-family: 'Baloo 2', cursive;
-            font-size: 42px;
+            font-size: 46px;
             line-height: 1;
             margin-bottom: 10px;
             color: #fff;
         }
 
         .footer-cta-copy p {
-            max-width: 540px;
+            max-width: 520px;
             font-size: 16px;
             color: rgba(255, 248, 240, 0.8);
         }
@@ -1982,8 +1931,8 @@
             align-items: center;
             justify-content: space-between;
             gap: 18px;
-            padding-top: 22px;
-            margin-top: 24px;
+            padding-top: 18px;
+            margin-top: 22px;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
@@ -2468,8 +2417,9 @@
                 padding-right: 0;
             }
 
-            .footer-badge-row {
-                justify-content: center;
+            .footer-details {
+                grid-template-columns: 1fr;
+                gap: 20px;
             }
 
             .footer-kicker,
@@ -2487,20 +2437,14 @@
                 display: none;
             }
 
-            .footer-social {
-                justify-content: center;
-            }
-
             .footer-card {
-                padding-left: 0;
-                border-left: 0;
                 padding-top: 18px;
                 border-top: 1px solid rgba(255, 255, 255, 0.1);
             }
 
             .footer-cta,
             .site-footer-bottom {
-                flex-direction: column;
+                grid-template-columns: 1fr;
                 align-items: flex-start;
             }
 
@@ -2564,10 +2508,6 @@
 
             .site-footer-inner {
                 padding: 0 16px;
-            }
-
-            .footer-brand-wordmark {
-                width: 228px;
             }
 
             .footer-cta-copy h3 {
@@ -3324,62 +3264,47 @@
                 <div class="site-footer-top">
                     <div class="footer-brand">
                         <div class="footer-kicker">White Plains Favorite Since 2016</div>
-                        <a href="#" class="footer-badge-row" onclick="showPage('home');return false;"
-                            aria-label="Delicias Peruvian Kitchen home">
-                            <img src="https://quseprdus1.blob.core.windows.net/kora-business-images/user-media/086addf9-ff5e-49d1-ac18-31d5d8ed4849/59d78af2-0707-4195-94a8-ef8b5bc77e09/1774975642_x09yd6.jpeg"
-                                alt="Delicias badge" class="footer-brand-badge" />
-                            <img src="https://quseprdus1.blob.core.windows.net/kora-business-images/user-media/086addf9-ff5e-49d1-ac18-31d5d8ed4849/59d78af2-0707-4195-94a8-ef8b5bc77e09/1774975698_u0zk95.jpeg"
-                                alt="Delicias Peruvian Kitchen" class="footer-brand-wordmark" />
-                        </a>
                         <p>
                             Authentic Peruvian kitchen energy, slow-roasted favorites, and bold comfort food made for
                             lunch runs, family dinners, and everything in between.
                         </p>
-                        <div class="footer-social" aria-label="Footer social links">
-                            <a class="social-btn" href="https://www.instagram.com/deliciasperuviankitchen"
-                                target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                                <svg viewBox="0 0 24 24" aria-hidden="true">
-                                    <path
-                                        d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm0 1.8A3.7 3.7 0 0 0 3.8 7.5v9a3.7 3.7 0 0 0 3.7 3.7h9a3.7 3.7 0 0 0 3.7-3.7v-9a3.7 3.7 0 0 0-3.7-3.7h-9Zm9.9 1.35a1.15 1.15 0 1 1 0 2.3 1.15 1.15 0 0 1 0-2.3ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 1.8A3.2 3.2 0 1 0 12 15.2 3.2 3.2 0 0 0 12 8.8Z" />
-                                </svg>
-                            </a>
-                            <a class="social-btn" href="mailto:info@deliciasperuviankitchen.com" aria-label="Email">
-                                <svg viewBox="0 0 24 24" aria-hidden="true">
-                                    <path
-                                        d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Zm0 2v.22l9 6.75 9-6.75V7H3Zm18 10V9.47l-8.4 6.3a1 1 0 0 1-1.2 0L3 9.47V17h18Z" />
-                                </svg>
-                            </a>
+                    </div>
+
+                    <div class="footer-details">
+                        <div class="footer-card">
+                            <h4>Visit Us</h4>
+                            <p>206 Mamaroneck Ave<br>White Plains, NY 10601</p>
+                            <p style="margin-top: 12px;">
+                                <a href="https://maps.google.com/?q=206+Mamaroneck+Ave+White+Plains+NY+10601"
+                                    target="_blank" rel="noopener noreferrer">Get Directions</a>
+                            </p>
                         </div>
-                    </div>
 
-                    <div class="footer-card">
-                        <h4>Visit Us</h4>
-                        <p>206 Mamaroneck Ave<br>White Plains, NY 10601</p>
-                        <p style="margin-top: 12px;">
-                            <a href="https://maps.google.com/?q=206+Mamaroneck+Ave+White+Plains+NY+10601"
-                                target="_blank" rel="noopener noreferrer">Get Directions</a>
-                        </p>
-                    </div>
-
-                    <div class="footer-card">
-                        <h4>Contact</h4>
-                        <p><a href="tel:9144375374">(914) 437-5374</a></p>
-                        <p><a href="tel:9144375375">(914) 437-5375</a></p>
-                        <p><a href="mailto:info@deliciasperuviankitchen.com">info@deliciasperuviankitchen.com</a></p>
-                    </div>
-
-                    <div class="footer-card">
-                        <h4>Hours & Links</h4>
-                        <div class="footer-hours-grid">
-                            <strong>Mon - Fri</strong><span>9:00 am - 9:00 pm</span>
-                            <strong>Sat - Sun</strong><span>10:00 am - 9:00 pm</span>
+                        <div class="footer-card">
+                            <h4>Contact</h4>
+                            <p><a href="tel:9144375374">(914) 437-5374</a></p>
+                            <p><a href="tel:9144375375">(914) 437-5375</a></p>
+                            <p><a href="mailto:info@deliciasperuviankitchen.com">info@deliciasperuviankitchen.com</a>
+                            </p>
                         </div>
-                        <ul style="margin-top: 16px;">
-                            <li><a href="#" onclick="showPage('menu');return false;">Menu</a></li>
-                            <li><a href="#" onclick="showPage('catering');return false;">Catering</a></li>
-                            <li><a href="#" onclick="showPage('location');return false;">Location</a></li>
-                            <li><a href="#" onclick="showPage('sauces');return false;">Our Sauces</a></li>
-                        </ul>
+
+                        <div class="footer-card">
+                            <h4>Hours</h4>
+                            <div class="footer-hours-grid">
+                                <strong>Mon - Fri</strong><span>9:00 am - 9:00 pm</span>
+                                <strong>Sat - Sun</strong><span>10:00 am - 9:00 pm</span>
+                            </div>
+                        </div>
+
+                        <div class="footer-card">
+                            <h4>Explore</h4>
+                            <ul>
+                                <li><a href="#" onclick="showPage('menu');return false;">Menu</a></li>
+                                <li><a href="#" onclick="showPage('catering');return false;">Catering</a></li>
+                                <li><a href="#" onclick="showPage('location');return false;">Location</a></li>
+                                <li><a href="#" onclick="showPage('sauces');return false;">Our Sauces</a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
 
