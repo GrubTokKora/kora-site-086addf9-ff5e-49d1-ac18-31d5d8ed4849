@@ -356,6 +356,27 @@
             box-shadow: 0 12px 28px rgba(226, 35, 26, 0.28);
         }
 
+        .mobile-phone {
+            display: none;
+            width: 42px;
+            height: 42px;
+            align-items: center;
+            justify-content: center;
+            color: var(--red);
+            text-decoration: none;
+            border: 1px solid rgba(226, 35, 26, 0.18);
+            border-radius: 999px;
+            background: #fff8f5;
+            flex-shrink: 0;
+        }
+
+        .mobile-phone svg {
+            width: 18px;
+            height: 18px;
+            fill: currentColor;
+            display: block;
+        }
+
         /* ─── HAMBURGER ─── */
         .hamburger {
             display: none;
@@ -1184,6 +1205,10 @@
             border-color: var(--red);
         }
 
+        .menu-tab.active:hover {
+            color: #fff;
+        }
+
         .menu-tab:hover {
             color: var(--red);
         }
@@ -1692,189 +1717,289 @@
         }
 
         /* ─── FOOTER ─── */
-        footer {
-            background: #ff6a00;
-            padding: 54px 0 0;
+        .site-footer {
+            position: relative;
+            overflow: hidden;
+            background:
+                radial-gradient(circle at top left, rgba(255, 195, 0, 0.16), transparent 28%),
+                radial-gradient(circle at 80% 10%, rgba(226, 35, 26, 0.18), transparent 30%),
+                linear-gradient(180deg, #4d1811 0%, #35110f 52%, #220b0a 100%);
+            color: #fff8f0;
+            padding: 88px 0 34px;
         }
 
-        .footer-inner {
-            max-width: 860px;
+        .site-footer::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.02)),
+                url('assets/live-asset10.png') center / cover no-repeat;
+            opacity: 0.07;
+            pointer-events: none;
+        }
+
+        .site-footer-inner {
+            position: relative;
+            z-index: 1;
+            max-width: 1220px;
             margin: 0 auto;
-            padding: 0 32px 28px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
+            padding: 0 32px;
         }
 
-        .footer-logo {
-            color: var(--cream);
-            margin-bottom: 18px;
+        .site-footer-shell {
+            position: relative;
+            padding-top: 22px;
+        }
+
+        .site-footer-shell::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 132px;
+            height: 4px;
+            border-radius: 999px;
+            background: linear-gradient(90deg, var(--gold), #ff7a00);
+        }
+
+        .site-footer-top {
+            display: grid;
+            grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr) minmax(0, 0.8fr) minmax(0, 0.9fr);
+            gap: 34px;
+            align-items: start;
+            padding-bottom: 34px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+        }
+
+        .footer-brand {
+            padding-right: 28px;
+        }
+
+        .footer-badge-row {
             display: inline-flex;
             align-items: center;
-            gap: 12px;
+            gap: 14px;
+            margin-bottom: 18px;
             text-decoration: none;
-            line-height: 1;
         }
 
-        .footer-logo-badge {
-            width: 44px;
-            height: 44px;
+        .footer-badge-row img {
+            display: block;
+        }
+
+        .footer-brand-badge {
+            width: 60px;
+            height: 60px;
             object-fit: contain;
-            filter: brightness(1.2) saturate(1.05);
         }
 
-        .footer-logo-text {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            line-height: 1;
+        .footer-brand-wordmark {
+            width: 288px;
+            max-width: 100%;
+            height: auto;
+            object-fit: contain;
         }
 
-        .footer-logo-main {
-            font-family: 'Bebas Neue', system-ui, sans-serif;
-            font-size: 52px;
-            letter-spacing: 0.02em;
-            color: #fff;
-        }
-
-        .footer-logo-sub {
-            font-family: 'Open Sans', sans-serif;
+        .footer-kicker {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 0;
             font-size: 11px;
-            letter-spacing: 0.32em;
+            font-weight: 700;
+            letter-spacing: 0.18em;
             text-transform: uppercase;
-            color: rgba(255, 255, 255, 0.96);
-            margin-top: 2px;
+            color: #ffd76a;
+            margin-bottom: 18px;
+        }
+
+        .footer-kicker::before {
+            content: '';
+            width: 34px;
+            height: 1px;
+            background: rgba(255, 211, 92, 0.8);
         }
 
         .footer-brand p {
-            display: none;
+            max-width: 460px;
+            font-size: 18px;
+            line-height: 1.72;
+            color: rgba(255, 248, 240, 0.88);
+            margin-bottom: 26px;
         }
 
         .footer-social {
             display: flex;
-            gap: 10px;
-            margin: 0 0 18px;
-        }
-
-        .social-btn {
-            width: 18px;
-            height: 18px;
-            border-radius: 0;
-            background: transparent;
-            border: none;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 12px;
-            color: #fff;
-            text-decoration: none;
-            transition: opacity 0.2s;
-        }
-
-        .social-btn:hover {
-            opacity: 0.72;
-        }
-
-        .footer-divider {
-            width: 100%;
-            max-width: 510px;
-            height: 1px;
-            background: rgba(255, 255, 255, 0.16);
-            margin: 14px auto 24px;
-        }
-
-        .footer-info-row {
-            width: 100%;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 18px;
-            align-items: start;
-            margin-bottom: 30px;
-        }
-
-        .footer-col {
-            text-align: left;
-        }
-
-        .footer-col h4 {
-            font-size: 10px;
-            letter-spacing: 0.08em;
-            text-transform: none;
-            color: rgba(255, 255, 255, 0.95);
-            margin-bottom: 8px;
-            font-weight: 600;
-        }
-
-        .footer-col p,
-        .footer-col a,
-        .footer-hours p,
-        .footer-hours a,
-        .footer-hours span {
-            font-size: 11px;
-            line-height: 1.45;
-            color: rgba(255, 255, 255, 0.95);
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-
-        .footer-col a:hover,
-        .footer-hours a:hover {
-            color: #fff3bf;
-        }
-
-        .footer-col ul {
-            list-style: none;
-        }
-
-        .footer-col ul li {
-            margin-bottom: 12px;
-        }
-
-        .footer-hours p {
-            margin-bottom: 6px;
-        }
-
-        .footer-bottom {
-            width: 100%;
-            max-width: 510px;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 8px;
-            margin: 0 auto;
-            text-align: left;
-        }
-
-        .footer-bottom p,
-        .footer-bottom a {
-            font-size: 10px;
-            color: rgba(255, 255, 255, 0.9);
-            text-decoration: none;
-        }
-
-        .footer-bottom a:hover {
-            color: #fff3bf;
-        }
-
-        .footer-legal {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
             gap: 12px;
         }
 
-        .footer-bar {
-            background: #ff6a00;
-            padding-bottom: 36px;
+        .social-btn {
+            width: 46px;
+            height: 46px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            text-decoration: none;
+            transition: transform 0.2s, background 0.2s, border-color 0.2s;
         }
 
-        .footer-frame {
-            width: 100%;
-            height: 360px;
-            border: none;
+        .social-btn:hover {
+            transform: translateY(-2px);
+            background: rgba(255, 195, 0, 0.14);
+            border-color: rgba(255, 211, 92, 0.4);
+        }
+
+        .social-btn svg {
+            width: 18px;
+            height: 18px;
+            fill: currentColor;
             display: block;
-            background: #ff6a00;
+        }
+
+        .footer-card {
+            min-height: 100%;
+            padding-left: 22px;
+            border-left: 1px solid rgba(255, 255, 255, 0.12);
+        }
+
+        .footer-card h4 {
+            margin-bottom: 16px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: #ffd76a;
+        }
+
+        .footer-card p,
+        .footer-card a,
+        .footer-card li,
+        .footer-hours-grid span {
+            font-size: 16px;
+            line-height: 1.75;
+            color: rgba(255, 248, 240, 0.9);
+            text-decoration: none;
+        }
+
+        .footer-card a:hover {
+            color: #ffd76a;
+        }
+
+        .footer-card ul {
+            list-style: none;
+            display: grid;
+            gap: 8px;
+        }
+
+        .footer-hours-grid {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 8px 16px;
+        }
+
+        .footer-hours-grid strong {
+            color: #fff;
+            font-size: 15px;
+        }
+
+        .footer-cta {
+            margin-top: 0;
+            padding-top: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+        }
+
+        .footer-cta-copy h3 {
+            font-family: 'Baloo 2', cursive;
+            font-size: 42px;
+            line-height: 1;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        .footer-cta-copy p {
+            max-width: 540px;
+            font-size: 16px;
+            color: rgba(255, 248, 240, 0.8);
+        }
+
+        .footer-cta-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+
+        .footer-ghost-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 52px;
+            padding: 0 22px;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            color: #fff;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .footer-ghost-link:hover {
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .footer-primary-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 54px;
+            padding: 0 28px;
+            border-radius: 999px;
+            background: linear-gradient(135deg, var(--gold), #ff8d13);
+            color: #3d120c;
+            text-decoration: none;
+            font-weight: 800;
+            box-shadow: 0 14px 30px rgba(255, 141, 19, 0.26);
+        }
+
+        .footer-primary-link:hover {
+            filter: brightness(1.03);
+        }
+
+        .site-footer-bottom {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 18px;
+            padding-top: 22px;
+            margin-top: 24px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .site-footer-bottom p,
+        .site-footer-bottom a {
+            font-size: 13px;
+            color: rgba(255, 248, 240, 0.72);
+            text-decoration: none;
+        }
+
+        .site-footer-bottom a:hover {
+            color: #fff;
+        }
+
+        .site-footer-legal {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            flex-wrap: wrap;
+            justify-content: flex-end;
         }
 
         /* ─── PAGE SECTIONS (hidden by default for SPA routing) ─── */
@@ -2010,16 +2135,15 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: var(--dark);
+            background: rgba(20, 17, 16, 0.28);
             z-index: 9998;
             display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
-            gap: 24px;
             opacity: 0;
             pointer-events: none;
-            transition: opacity 0.3s;
+            transition: opacity 0.28s ease;
+            padding: 18px 14px;
         }
 
         .mobile-nav.open {
@@ -2027,29 +2151,136 @@
             pointer-events: all;
         }
 
+        .mobile-nav-panel {
+            position: relative;
+            margin: 0 auto;
+            width: min(100%, 420px);
+            max-height: min(92vh, 860px);
+            padding: 18px 22px 26px;
+            background:
+                linear-gradient(rgba(255, 252, 247, 0.96), rgba(255, 252, 247, 0.96)),
+                url('assets/live-asset10.png') center / cover no-repeat;
+            border: 1px solid rgba(228, 214, 159, 0.7);
+            border-radius: 18px;
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.16);
+            transform: translateY(18px) scale(0.98);
+            transition: transform 0.28s ease;
+            overflow-y: auto;
+        }
+
+        .mobile-nav.open .mobile-nav-panel {
+            transform: translateY(0) scale(1);
+        }
+
+        .mobile-nav-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid rgba(107, 44, 40, 0.15);
+        }
+
+        .mobile-nav-brand {
+            display: inline-flex;
+            justify-content: center;
+        }
+
+        .mobile-nav-brand img {
+            width: 126px;
+            height: auto;
+            display: block;
+        }
+
+        .mobile-nav-top-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .mobile-nav-top-actions .mobile-phone {
+            display: inline-flex;
+        }
+
+        .mobile-nav-list {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            padding: 28px 0 18px;
+        }
+
         .mobile-nav a {
-            font-family: 'Baloo 2', cursive;
-            font-size: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 58px;
+            padding: 0 14px;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 16px;
             font-weight: 700;
-            color: var(--cream);
+            color: #111;
             text-decoration: none;
-            letter-spacing: 0.04em;
-            transition: color 0.2s;
+            letter-spacing: 0;
+            border-bottom: 2px solid rgba(218, 179, 41, 0.65);
+            transition: color 0.2s, background 0.2s;
         }
 
         .mobile-nav a:hover {
-            color: var(--gold-light);
+            color: var(--red);
+            background: rgba(255, 247, 214, 0.72);
         }
 
         .mobile-nav-close {
-            position: absolute;
-            top: 24px;
-            right: 24px;
-            font-size: 28px;
-            color: rgba(255, 255, 255, 0.5);
+            font-size: 34px;
+            line-height: 1;
+            color: var(--red);
             background: none;
             border: none;
             cursor: pointer;
+            padding: 0;
+        }
+
+        .mobile-nav-footer {
+            margin-top: auto;
+            padding-top: 18px;
+        }
+
+        .mobile-nav-social {
+            display: flex;
+            justify-content: center;
+            gap: 18px;
+            margin-bottom: 18px;
+        }
+
+        .mobile-nav-social a {
+            min-height: 0;
+            padding: 0;
+            border: 0;
+            display: inline-flex;
+            width: auto;
+            background: transparent;
+            color: var(--red);
+        }
+
+        .mobile-nav-social svg {
+            width: 21px;
+            height: 21px;
+            fill: currentColor;
+            display: block;
+        }
+
+        .mobile-nav-cta {
+            display: block;
+            width: 100%;
+            text-align: center;
+            padding: 16px 20px;
+            background: var(--red);
+            color: #fff;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 800;
+            border-radius: 2px;
+            box-shadow: 0 10px 24px rgba(226, 35, 26, 0.2);
         }
 
         /* ─── RESPONSIVE ─── */
@@ -2082,11 +2313,6 @@
                 gap: 48px;
             }
 
-            .footer-inner {
-                grid-template-columns: 1fr 1fr;
-                gap: 40px;
-            }
-
             .stats-grid {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 32px;
@@ -2100,22 +2326,108 @@
         }
 
         @media (max-width: 768px) {
+            .announcement {
+                padding: 10px 14px;
+                font-size: 11px;
+                line-height: 1.45;
+            }
+
+            nav {
+                border-bottom-width: 6px;
+            }
+
+            .nav-inner {
+                height: 72px;
+                padding: 0 14px;
+                gap: 10px;
+            }
+
+            .nav-logo {
+                gap: 8px;
+                min-width: 0;
+                flex: 1;
+            }
+
+            .nav-logo-badge {
+                width: 42px;
+                height: 42px;
+            }
+
+            .nav-logo-wordmark {
+                height: 30px;
+                max-width: min(44vw, 190px);
+            }
 
             .nav-links,
             .nav-phone {
                 display: none;
             }
 
+            .nav-actions {
+                gap: 10px;
+                margin-left: auto;
+            }
+
+            .btn-order {
+                padding: 10px 14px;
+                font-size: 13px;
+                line-height: 1.1;
+                text-align: center;
+                min-width: 98px;
+            }
+
+            .mobile-phone {
+                display: inline-flex;
+            }
+
             .hamburger {
                 display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 42px;
+                height: 42px;
+                padding: 0;
+                border: 1px solid rgba(0, 0, 0, 0.08);
+                border-radius: 999px;
+                flex-shrink: 0;
+            }
+
+            .hamburger span {
+                width: 20px;
             }
 
             .fav-grid {
                 grid-template-columns: 1fr;
             }
 
+            .menu-tabs {
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 10px;
+                margin-bottom: 32px;
+            }
+
+            .menu-tab {
+                width: 100%;
+                min-height: 52px;
+                padding: 12px 14px;
+                font-size: 14px;
+            }
+
             .menu-panel.active {
                 grid-template-columns: 1fr;
+            }
+
+            .menu-item {
+                padding: 6px 0 16px;
+            }
+
+            .menu-item-name {
+                font-size: 19px;
+            }
+
+            .menu-item-desc {
+                font-size: 15px;
             }
 
             .sauces-grid {
@@ -2126,19 +2438,66 @@
                 grid-template-columns: repeat(3, 1fr);
             }
 
-            .footer-inner {
+            .site-footer-top {
                 grid-template-columns: 1fr;
+                gap: 22px;
             }
 
-            .footer-bottom {
-                flex-direction: column;
-                gap: 12px;
+            .footer-brand {
+                padding-right: 0;
+            }
+
+            .footer-badge-row {
+                justify-content: center;
+            }
+
+            .footer-kicker,
+            .footer-brand,
+            .footer-brand p {
                 text-align: center;
+            }
+
+            .footer-kicker {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .footer-kicker::before {
+                display: none;
+            }
+
+            .footer-social {
+                justify-content: center;
+            }
+
+            .footer-card {
+                padding-left: 0;
+                border-left: 0;
+                padding-top: 18px;
+                border-top: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            .footer-cta,
+            .site-footer-bottom {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .footer-cta-actions,
+            .site-footer-legal {
+                justify-content: flex-start;
             }
 
             .hero-actions {
                 flex-direction: column;
                 align-items: flex-start;
+                width: 100%;
+            }
+
+            .hero-actions .btn-primary,
+            .hero-actions .btn-outline {
+                width: 100%;
+                text-align: center;
             }
 
             .favorites-header {
@@ -2162,6 +2521,46 @@
 
             .about-img-accent {
                 right: -10px;
+            }
+        }
+
+        @media (max-width: 520px) {
+            .btn-order {
+                min-width: 84px;
+                padding: 9px 12px;
+                font-size: 12px;
+            }
+
+            .mobile-nav {
+                padding: 10px;
+            }
+
+            .mobile-nav-panel {
+                width: 100%;
+                max-height: calc(100vh - 20px);
+                padding-left: 18px;
+                padding-right: 18px;
+                border-radius: 14px;
+            }
+
+            .site-footer {
+                padding-top: 56px;
+            }
+
+            .site-footer-inner {
+                padding: 0 16px;
+            }
+
+            .footer-brand-wordmark {
+                width: 228px;
+            }
+
+            .footer-cta-copy h3 {
+                font-size: 34px;
+            }
+
+            .menu-tabs {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -2207,6 +2606,12 @@
                 <a href="https://order.toasttab.com/online/delicias-peruvian-kitchen-206-mamaroneck-ave" target="_blank"
                     class="btn-order">Order Now</a>
             </div>
+            <a href="tel:9144375374" class="mobile-phone" aria-label="Call Delicias Peruvian Kitchen">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                        d="M6.62 10.79a15.46 15.46 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.32.56 3.57.56a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.07 21 3 13.93 3 5a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.24.19 2.44.56 3.57a1 1 0 0 1-.24 1.02l-2.2 2.2Z" />
+                </svg>
+            </a>
             <div class="hamburger" onclick="toggleMobileNav()">
                 <span></span><span></span><span></span>
             </div>
@@ -2215,15 +2620,50 @@
 
     <!-- Mobile Nav -->
     <div class="mobile-nav" id="mobileNav">
-        <button class="mobile-nav-close" onclick="toggleMobileNav()">✕</button>
-        <a href="#" onclick="showPage('home');toggleMobileNav();return false;">Home</a>
-        <a href="#" onclick="showPage('menu');toggleMobileNav();return false;">Menu</a>
-        <a href="#" onclick="showPage('featured');toggleMobileNav();return false;">Featured Favorites</a>
-        <a href="#" onclick="showPage('location');toggleMobileNav();return false;">Location</a>
-        <a href="#" onclick="showPage('catering');toggleMobileNav();return false;">Catering</a>
-        <a href="#" onclick="showPage('sauces');toggleMobileNav();return false;">Our Sauces</a>
-        <a href="https://order.toasttab.com/online/delicias-peruvian-kitchen-206-mamaroneck-ave" target="_blank">Order
-            Online</a>
+        <div class="mobile-nav-panel">
+            <div class="mobile-nav-header">
+                <a href="#" class="mobile-nav-brand" onclick="showPage('home');toggleMobileNav();return false;"
+                    aria-label="Delicias Peruvian Kitchen home">
+                    <img src="assets/live-logo.png" alt="Delicias Peruvian Kitchen" />
+                </a>
+                <div class="mobile-nav-top-actions">
+                    <a href="tel:9144375374" class="mobile-phone" aria-label="Call Delicias Peruvian Kitchen">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path
+                                d="M6.62 10.79a15.46 15.46 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.32.56 3.57.56a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.07 21 3 13.93 3 5a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.24.19 2.44.56 3.57a1 1 0 0 1-.24 1.02l-2.2 2.2Z" />
+                        </svg>
+                    </a>
+                    <button class="mobile-nav-close" onclick="toggleMobileNav()" aria-label="Close menu">✕</button>
+                </div>
+            </div>
+            <div class="mobile-nav-list">
+                <a href="#" onclick="showPage('home');toggleMobileNav();return false;">Home</a>
+                <a href="#" onclick="showPage('menu');toggleMobileNav();return false;">Menu</a>
+                <a href="#" onclick="showPage('featured');toggleMobileNav();return false;">Featured Favorites</a>
+                <a href="#" onclick="showPage('location');toggleMobileNav();return false;">Location</a>
+                <a href="#" onclick="showPage('catering');toggleMobileNav();return false;">Catering</a>
+                <a href="#" onclick="showPage('sauces');toggleMobileNav();return false;">Our Sauces</a>
+            </div>
+            <div class="mobile-nav-footer">
+                <div class="mobile-nav-social" aria-label="Social links">
+                    <a href="https://www.instagram.com/deliciasperuviankitchen" target="_blank"
+                        rel="noopener noreferrer" aria-label="Instagram">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path
+                                d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm0 1.8A3.7 3.7 0 0 0 3.8 7.5v9a3.7 3.7 0 0 0 3.7 3.7h9a3.7 3.7 0 0 0 3.7-3.7v-9a3.7 3.7 0 0 0-3.7-3.7h-9Zm9.9 1.35a1.15 1.15 0 1 1 0 2.3 1.15 1.15 0 0 1 0-2.3ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 1.8A3.2 3.2 0 1 0 12 15.2 3.2 3.2 0 0 0 12 8.8Z" />
+                        </svg>
+                    </a>
+                    <a href="mailto:info@deliciasperuviankitchen.com" aria-label="Email">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path
+                                d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Zm0 2v.22l9 6.75 9-6.75V7H3Zm18 10V9.47l-8.4 6.3a1 1 0 0 1-1.2 0L3 9.47V17h18Z" />
+                        </svg>
+                    </a>
+                </div>
+                <a href="https://order.toasttab.com/online/delicias-peruvian-kitchen-206-mamaroneck-ave" target="_blank"
+                    class="mobile-nav-cta">Order Now!</a>
+            </div>
+        </div>
     </div>
 
     <!-- ═══════════════ HOME PAGE ═══════════════ -->
@@ -2865,10 +3305,93 @@
             </div>
         </div>
     </div>
+    <!-- ═══════════════ FOOTER ═══════════════ -->
+    <footer class="site-footer">
+        <div class="site-footer-inner">
+            <div class="site-footer-shell">
+                <div class="site-footer-top">
+                    <div class="footer-brand">
+                        <div class="footer-kicker">White Plains Favorite Since 2016</div>
+                        <a href="#" class="footer-badge-row" onclick="showPage('home');return false;"
+                            aria-label="Delicias Peruvian Kitchen home">
+                            <img src="assets/live-asset11.png" alt="Delicias badge" class="footer-brand-badge" />
+                            <img src="assets/live-logo.png" alt="Delicias Peruvian Kitchen"
+                                class="footer-brand-wordmark" />
+                        </a>
+                        <p>
+                            Authentic Peruvian kitchen energy, slow-roasted favorites, and bold comfort food made for
+                            lunch runs, family dinners, and everything in between.
+                        </p>
+                        <div class="footer-social" aria-label="Footer social links">
+                            <a class="social-btn" href="https://www.instagram.com/deliciasperuviankitchen"
+                                target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path
+                                        d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm0 1.8A3.7 3.7 0 0 0 3.8 7.5v9a3.7 3.7 0 0 0 3.7 3.7h9a3.7 3.7 0 0 0 3.7-3.7v-9a3.7 3.7 0 0 0-3.7-3.7h-9Zm9.9 1.35a1.15 1.15 0 1 1 0 2.3 1.15 1.15 0 0 1 0-2.3ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 1.8A3.2 3.2 0 1 0 12 15.2 3.2 3.2 0 0 0 12 8.8Z" />
+                                </svg>
+                            </a>
+                            <a class="social-btn" href="mailto:info@deliciasperuviankitchen.com" aria-label="Email">
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path
+                                        d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Zm0 2v.22l9 6.75 9-6.75V7H3Zm18 10V9.47l-8.4 6.3a1 1 0 0 1-1.2 0L3 9.47V17h18Z" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
 
+                    <div class="footer-card">
+                        <h4>Visit Us</h4>
+                        <p>206 Mamaroneck Ave<br>White Plains, NY 10601</p>
+                        <p style="margin-top: 12px;">
+                            <a href="https://maps.google.com/?q=206+Mamaroneck+Ave+White+Plains+NY+10601"
+                                target="_blank" rel="noopener noreferrer">Get Directions</a>
+                        </p>
+                    </div>
 
-    <!-- ═══════════════ FOOTER (standalone file) ═══════════════ -->
-    <iframe src="footer.html" class="footer-frame" title="Site footer"></iframe>
+                    <div class="footer-card">
+                        <h4>Contact</h4>
+                        <p><a href="tel:9144375374">(914) 437-5374</a></p>
+                        <p><a href="tel:9144375375">(914) 437-5375</a></p>
+                        <p><a href="mailto:info@deliciasperuviankitchen.com">info@deliciasperuviankitchen.com</a></p>
+                    </div>
+
+                    <div class="footer-card">
+                        <h4>Hours & Links</h4>
+                        <div class="footer-hours-grid">
+                            <strong>Mon - Fri</strong><span>9:00 am - 9:00 pm</span>
+                            <strong>Sat - Sun</strong><span>10:00 am - 9:00 pm</span>
+                        </div>
+                        <ul style="margin-top: 16px;">
+                            <li><a href="#" onclick="showPage('menu');return false;">Menu</a></li>
+                            <li><a href="#" onclick="showPage('catering');return false;">Catering</a></li>
+                            <li><a href="#" onclick="showPage('location');return false;">Location</a></li>
+                            <li><a href="#" onclick="showPage('sauces');return false;">Our Sauces</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="footer-cta">
+                    <div class="footer-cta-copy">
+                        <h3>Order dinner with Delicias style.</h3>
+                        <p>Pickup is easy, catering is available, and the full menu is ready whenever you are.</p>
+                    </div>
+                    <div class="footer-cta-actions">
+                        <a href="tel:9144375374" class="footer-ghost-link">Call Restaurant</a>
+                        <a href="https://order.toasttab.com/online/delicias-peruvian-kitchen-206-mamaroneck-ave"
+                            target="_blank" class="footer-primary-link">Order Now</a>
+                    </div>
+                </div>
+
+                <div class="site-footer-bottom">
+                    <p>&copy; 2026 Delicias Peruvian Kitchen. All rights reserved.</p>
+                    <div class="site-footer-legal">
+                        <a href="#" onclick="showPage('privacy');return false;">Privacy Policy</a>
+                        <a href="#" onclick="showPage('terms');return false;">Terms &amp; Conditions</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <script>
         // ─── PAGE ROUTING ───
@@ -3046,8 +3569,8 @@
                 } catch (error) {
                     const message = error && error.message ? error.message : 'Something went wrong. Please try again.';
                     setNewsletterMessage(message, true);
-                } finally {
-                    if (submitButton) {
+                } final
+  if (submitButton) {
                         submitButton.disabled = false;
                         submitButton.textContent = 'Subscribe Now';
                     }
